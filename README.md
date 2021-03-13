@@ -12,8 +12,7 @@ Pomodoro techniques.
     4) If four pomodor cycle is completed then take 15 mins break.
     5) Then goto step  1.
 
-    By this way we can know how much time or pomodoro cycle we take to complete our each task and there by aggregating it for whole
-taks. All the best.
+    By this way we can know how much time or pomodoro cycle we take to complete our each task and there by aggregating it for whole tasks. All the best.
 
 NOTE: It's basic onlt. Features will be added soon like todo management here and monitoring your productivity in here itself.
 # Getting Started with Create React App
