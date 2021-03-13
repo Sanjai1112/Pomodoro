@@ -1,14 +1,20 @@
 # Project Moto
+
 This project is called as pomodoro. It is intentionally to create a pomodoro technique as a web app for work with more productive by using pomodoro methodoolgy.
+
 Pomodoro techniques.
+
     Divide your tasks as todo to do and allot 25 minutes for each todo to complete
+
     1) Start your pomodoro for your task.
     2) Take 5 mins break after 25 mins completed.
     3) Then goto 1st step if you completed / uncompleted the task until four cycles of working.
     4) If four pomodor cycle is completed then take 15 mins break.
     5) Then goto step  1.
+
     By this way we can know how much time or pomodoro cycle we take to complete our each task and there by aggregating it for whole
-taks. All the best
+taks. All the best.
+
 NOTE: It's basic onlt. Features will be added soon like todo management here and monitoring your productivity in here itself.
 # Getting Started with Create React App
 
