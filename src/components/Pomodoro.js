@@ -5,9 +5,9 @@ function Pomodoro() {
     const [isBreakStarted, togglePomoBreakAction] = useState(false);
     const [pomoMinutes, setPomoMinutes] = useState(25);
     const[pomoSeconds,setPomoSeconds] = useState(0);
-    const pomoMinutesRef = useRef();
+    const pomoMinutesRef = useRef(25);
     pomoMinutesRef.current = pomoMinutes;
-    const pomoSecondsRef = useRef();
+    const pomoSecondsRef = useRef(0);
     pomoSecondsRef.current = pomoSeconds;
     const interValIdRef = useRef(-1);
 
@@ -18,12 +18,14 @@ function Pomodoro() {
                         setPomoSeconds(59);
                         setPomoMinutes(pomoMinutesRef.current - 1);
                     }else{
-                        clearInterval(interval);
+                      stopTimer();
                     }
                 }else{
                     setPomoSeconds(pomoSecondsRef.current - 1);
                 }
-                interValIdRef.current = interval;
+                if(interValIdRef.current === -1){
+                    interValIdRef.current = interval;
+                }
             }, 1000);
     }
     const stopTimer = () =>{
@@ -31,8 +33,13 @@ function Pomodoro() {
             clearInterval(interValIdRef.current);
             setPomoMinutes(25);
             setPomoSeconds(0);
+            if(isPomoStarted){
+                togglePomoAction(false);
+            }else if(isBreakStarted){
+                togglePomoBreakAction(false);
+            }
             pomoMinutesRef.current = 25;
-            pomoSecondsRef.current = 59;
+            pomoSecondsRef.current = 0;
             interValIdRef.current = -1;
         }else{
             setTimeout(stopTimer,1000);
@@ -73,7 +80,6 @@ function Pomodoro() {
                 alert((isShortBreak ? "Short break ": "Long break") + "is taken, so stop break to start pomo timer");
             }
         }else if(target === 'stop-btn' && isPomoStarted){
-            togglePomoAction(false);
             stopTimer();
         }else if(target === 'take-break_btn' && !isBreakStarted){
             if(!isPomoStarted){
@@ -83,7 +89,6 @@ function Pomodoro() {
                 alert("Pomdora Timer is running, please stop it to take break");
             }
         }else if(target === 'stop-break_btn' && isBreakStarted){
-            togglePomoBreakAction(false);
             stopTimer();
         }else{
             alert("Invalid operation");
