@@ -11,9 +11,9 @@ function Pomodoro() {
     pomoSecondsRef.current = pomoSeconds;
     const interValIdRef = useRef(-1);
     const pomoStartedFlagRef = useRef();
-    pomoStartedFlagRef.current = false;
+    pomoStartedFlagRef.current = isPomoStarted;
     const breakStartedFlagRef = useRef();
-    breakStartedFlagRef.current = false;
+    breakStartedFlagRef.current = isBreakStarted;
     const startTimer = () =>{
         const interval = setInterval(() => {
                 if(pomoSecondsRef.current === 0){
