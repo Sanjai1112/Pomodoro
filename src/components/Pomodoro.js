@@ -31,9 +31,7 @@ function Pomodoro() {
                 }else{
                     setPomoSeconds(pomoSecondsRef.current - 1);
                 }
-                if(interValIdRef.current === -1){
-                    interValIdRef.current = interval;
-                }
+                interValIdRef.current = interval;
             }, 1000);
     }
     const stopTimer = () =>{
