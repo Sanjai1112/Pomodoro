@@ -10,7 +10,10 @@ function Pomodoro() {
     const pomoSecondsRef = useRef(0);
     pomoSecondsRef.current = pomoSeconds;
     const interValIdRef = useRef(-1);
-
+    const pomoStartedFlagRef = useRef();
+    pomoStartedFlagRef.current = false;
+    const breakStartedFlagRef = useRef();
+    breakStartedFlagRef.current = false;
     const startTimer = () =>{
         const interval = setInterval(() => {
                 if(pomoSecondsRef.current === 0){
@@ -18,7 +21,12 @@ function Pomodoro() {
                         setPomoSeconds(59);
                         setPomoMinutes(pomoMinutesRef.current - 1);
                     }else{
-                      stopTimer();
+                        if(pomoStartedFlagRef.current){
+                            togglePomoAction(false);
+                        }else if(breakStartedFlagRef.current){
+                            togglePomoBreakAction(false);
+                        }
+                        stopTimer();
                     }
                 }else{
                     setPomoSeconds(pomoSecondsRef.current - 1);
@@ -33,13 +41,6 @@ function Pomodoro() {
             clearInterval(interValIdRef.current);
             setPomoMinutes(25);
             setPomoSeconds(0);
-            if(isPomoStarted){
-                togglePomoAction(false);
-            }else if(isBreakStarted){
-                togglePomoBreakAction(false);
-            }
-            pomoMinutesRef.current = 25;
-            pomoSecondsRef.current = 0;
             interValIdRef.current = -1;
         }else{
             setTimeout(stopTimer,1000);
@@ -80,6 +81,7 @@ function Pomodoro() {
                 alert((isShortBreak ? "Short break ": "Long break") + "is taken, so stop break to start pomo timer");
             }
         }else if(target === 'stop-btn' && isPomoStarted){
+            togglePomoAction(false);
             stopTimer();
         }else if(target === 'take-break_btn' && !isBreakStarted){
             if(!isPomoStarted){
@@ -89,6 +91,7 @@ function Pomodoro() {
                 alert("Pomdora Timer is running, please stop it to take break");
             }
         }else if(target === 'stop-break_btn' && isBreakStarted){
+            togglePomoBreakAction(false);
             stopTimer();
         }else{
             alert("Invalid operation");
