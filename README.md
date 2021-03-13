@@ -13,7 +13,8 @@ Pomodoro techniques.
     5) Then goto step  1.
 
     By this way we can know how much time or pomodoro cycle we take to complete our each task and there by aggregating it for whole tasks. All the best.
-Live Link: https://sanjai1112.github.io/Pomodoro/
+Live Link: https://sanjai1112.github.io/Pomodoro/.
+
 NOTE: It's basic onlt. Features will be added soon like todo management here and monitoring your productivity in here itself.
 # Getting Started with Create React App
 
