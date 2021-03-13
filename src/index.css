@@ -1,0 +1,9 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  /* background-color: rgb(112, 123, 150); */
+  background: linear-gradient(to right bottom, blue,pink);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+}

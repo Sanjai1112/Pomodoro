@@ -1,0 +1,94 @@
+.pomo-timer_circle{
+    margin-top: 2rem;
+    border: 1px solid rgb(53, 81, 153);
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    cursor: pointer;
+    background: linear-gradient(blue,pink);
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    padding: 0px;
+}
+.pomo_heading{
+    text-align:center;
+    display:inline-block;
+    width:100%;
+}
+.pomo-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+.pomo-break_btn_wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 15rem;
+    position: relative;
+}
+
+.pomo-short_break_btn, .pomo-long_break_btn,.pomo-timer_start_btn
+.pomo-timer_stop_btn,.pomo-timer_stpbreak_btn,.pomo-timer_tkbreak_btn{
+    padding: 0.3rem 1rem;
+    font-weight: 600;
+    font-size: 13.6px;
+}
+.pomo-break_btn_highlights{
+    position: absolute;
+    padding: 0.3rem 1rem;
+    width: 4.6rem;
+    height: 1rem;
+    z-index: -1; 
+    transition: left 0.6s cubic-bezier(0.22, 0.64, 1, 1);
+}
+
+.left-begin{
+    left:0%;
+}
+.left-end{
+    left: 55%;
+}
+.btn-active{
+    border-radius: 25px;
+    background: linear-gradient(blue,rgb(144, 144, 181));
+    box-shadow: 2px 2px 6px  rgba(0,0,0,0.5);
+}
+.pomo-timer_action_btn-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 15rem;
+    margin-top: 2rem;
+}
+.pomo-timer_stop_btn,.pomo-timer_start_btn{
+    width: 40%;
+}
+.pomo-timer_start_btn{
+    background: linear-gradient(rgb(32, 77, 32),rgb(103, 172, 103));
+    border-radius: 25px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+.pomo-timer_tkbreak_btn{
+    background: linear-gradient(blue,rgb(144, 144, 181));
+    border-radius: 25px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+.pomo-timer_stop_btn,.pomo-timer_stpbreak_btn{
+    background: linear-gradient(rgb(160, 63, 63),rgb(228, 22, 22));
+    border-radius: 25px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+.pomo-timer_tkbreak_btn,.pomo-timer_stpbreak_btn{
+    width: 50%;
+}
