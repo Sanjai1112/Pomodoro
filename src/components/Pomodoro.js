@@ -46,7 +46,6 @@ function Pomodoro() {
        
     }
     const startBreak = () =>{
-        console.log(isBreakStarted);
         if(!isBreakStarted){
             if(isShortBreak){
                 setPomoMinutes(5);
