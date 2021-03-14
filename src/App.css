@@ -121,3 +121,9 @@ button{
 .pomo-timer_tkbreak_btn,.pomo-timer_stpbreak_btn{
     width: 50%;
 }
+.github_icon{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    width: 15rem;
+}

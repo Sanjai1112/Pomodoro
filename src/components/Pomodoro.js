@@ -1,4 +1,5 @@
 import React,{useState, useRef} from 'react'
+import {FaGithub} from 'react-icons/fa'
 function Pomodoro() {
     const [isShortBreak, togglePomoBreakType] = useState(true);
     const [isPomoStarted,togglePomoAction] = useState(false);
@@ -119,6 +120,7 @@ function Pomodoro() {
                 
                 }
             </div>
+            <div className="github_icon"> <a href="https://github.com/Sanjai1112/Pomodoro" rel="noreferrer" target="_blank"><FaGithub color={"black"} size={"25px"}/></a></div>
         </div>
     )
 }
