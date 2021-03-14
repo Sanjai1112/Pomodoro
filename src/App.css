@@ -1,16 +1,45 @@
 .pomo-timer_circle{
+    position: relative;
     margin-top: 2rem;
     border: 1px solid rgb(53, 81, 153);
     width: 15rem;
     height: 15rem;
     border-radius: 50%;
-    cursor: pointer;
+    /* cursor: pointer; */
     background: linear-gradient(blue,pink);
     box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#pomo_circle::after, #pomo_circle::before{
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: -5px;
+    background: linear-gradient(45deg,#e6fb04,#ff6600,#00ff66,#00ffff,#ff00ff,
+                #ff0099,#6e0dde,#ff3300,#099fff);
+    background-size: 400%;
+    width: calc(100% + 11px);
+    height: calc(100% + 10px);
+    border-radius: 50%;
+    animation: rotate 20s linear infinite;
+    z-index: -1;
+}
+#pomo_circle::after{
+    filter: blur(25px);
+}
+@keyframes rotate{
+    0%{
+        background-position: 0 0 ;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
 }
 button{
     outline: none;

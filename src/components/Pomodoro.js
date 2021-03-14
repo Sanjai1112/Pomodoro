@@ -102,7 +102,7 @@ function Pomodoro() {
                 <button className="pomo-short_break_btn"  id="short-break_btn" onClick={handleBreakBtn}>Short break</button>
                 <button className="pomo-long_break_btn" id="long-break_btn" onClick={handleBreakBtn}>Long break</button>
             </div>
-            <div className="pomo-timer_circle">
+            <div className="pomo-timer_circle" id={(isPomoStarted || isBreakStarted) ? "pomo_circle" : "#"}>
                 <span className="pomo-time_span" id="pomo-time">{(pomoMinutes <= 9 ? "0"+pomoMinutes : pomoMinutes) +":"+ (pomoSeconds <= 9 ?  "0"+pomoSeconds : pomoSeconds)}</span>
             </div>
             <div className="pomo-timer_action_btn-wrapper">
