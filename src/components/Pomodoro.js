@@ -16,24 +16,25 @@ function Pomodoro() {
     const breakStartedFlagRef = useRef();
     breakStartedFlagRef.current = isBreakStarted;
     const startTimer = () =>{
-        const interval = setInterval(() => {
-                if(pomoSecondsRef.current === 0){
-                    if(pomoMinutesRef.current - 1 !== -1){
-                        setPomoSeconds(59);
-                        setPomoMinutes(pomoMinutesRef.current - 1);
-                    }else{
-                        if(pomoStartedFlagRef.current){
-                            togglePomoAction(false);
-                        }else if(breakStartedFlagRef.current){
-                            togglePomoBreakAction(false);
+        if(interValIdRef.current === -1){
+            interValIdRef.current = setInterval(() => {
+                    if(pomoSecondsRef.current === 0){
+                        if(pomoMinutesRef.current - 1 !== -1){
+                            setPomoSeconds(59);
+                            setPomoMinutes(pomoMinutesRef.current - 1);
+                        }else{
+                            if(pomoStartedFlagRef.current){
+                                togglePomoAction(false);
+                            }else if(breakStartedFlagRef.current){
+                                togglePomoBreakAction(false);
+                            }
+                            stopTimer();
                         }
-                        stopTimer();
+                    }else{
+                        setPomoSeconds(pomoSecondsRef.current - 1);
                     }
-                }else{
-                    setPomoSeconds(pomoSecondsRef.current - 1);
-                }
-                interValIdRef.current = interval;
-            }, 1000);
+                }, 1000);
+        }
     }
     const stopTimer = () =>{
         if(interValIdRef.current !== -1){
